@@ -45,7 +45,7 @@ Para criar a estrutura do Terraform, execute os comandos abaixo:
 ```bash
 mkdir -p terraform/{main,modules}
 touch terraform/main/{main.tf,variables.tf,outputs.tf}
-touch terraform/modules/{vpc,subnet,security_group,internet_gateway,route_table,nat_gateway,ec2}.tf
+touch terraform/main/modules/{vpc,subnet,security_group,internet_gateway,route_table,nat_gateway,ec2}.tf
 ```
 
 ### Criando a estrutura do OpenTofu
@@ -55,30 +55,6 @@ Para criar a estrutura do OpenTofu, execute os comandos abaixo:
 ```bash
 mkdir -p opentofu/{main,modules}
 touch opentofu/main/{main.tf,variables.tf,outputs.tf}
-touch opentofu/modules/{vpc,subnet,security_group,internet_gateway,route_table,nat_gateway,ec2}.tf
+touch opentofu/main/modules/{vpc,subnet,security_group,internet_gateway,route_table,nat_gateway,ec2}.tf
 ```
-
-### Executando o Terraform
-
-Para executar o Terraform, execute os comandos abaixo:
-
-```bash
-cd terraform/main
-terraform init
-terraform plan
-terraform apply
-```
-
-### Executando o OpenTofu
-
-Para executar o OpenTofu, execute os comandos abaixo:
-
-```bash
-cd opentofu/main
-tofu init
-tofu plan
-tofu apply
-```
-
-
 
