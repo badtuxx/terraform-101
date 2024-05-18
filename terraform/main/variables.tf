@@ -1,9 +1,3 @@
-variable "region" {
-  description = "The AWS region where resources will be created."
-  type        = string
-  default     = "eu-west-1"
-}
-
 variable "instance_type" {
   description = "The type of EC2 instance to use."
   type        = string
