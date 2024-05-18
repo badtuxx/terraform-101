@@ -14,19 +14,6 @@ A live foi realizada no dia 19/05/2024 com o Jeferson e o Gomex, ao vivo, mas vo
 - [AWS CLI - Configuração de credenciais](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 - [AWS CLI - Configuração de credenciais - Perfil](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
 
-### Objectivos
-
-- [ ] Apresentar o Terraform
-- [ ] Apresentar o OpenTofu
-- [ ] Criar um ambiente de infraestrutura na AWS (VPC, Subnets, Security Groups, Internet Gateway, Route Table, NAT Gateway, EC2)
-- [ ] Comparar Terraform e OpenTofu
-- [ ] Conclusão
-- [ ] Perguntas e respostas
-- [ ] Sorteio
-- [ ] Encerramento
-- [ ] Agradecimentos
-- [ ] Próximos passos
-- [ ] Links úteis
 
 ### Comandos
 
