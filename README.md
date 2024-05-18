@@ -28,33 +28,38 @@ A live foi realizada no dia 19/05/2024 com o Jeferson e o Gomex, ao vivo, mas vo
 - [ ] Próximos passos
 - [ ] Links úteis
 
-### Estrutura do repositório
+### Comandos
 
-Para criar a estrutura do repositório, execute os comandos abaixo:
-
-```bash
-mkdir terraform-101
-cd terraform-101
-touch README.md
-```
-
-### Criando a estrutura do Terraform
-
-Para criar a estrutura do Terraform, execute os comandos abaixo:
+#### Configuração AWS CLI
+Adicione suas credenciais da AWS
 
 ```bash
-mkdir -p terraform/{main,modules}
-touch terraform/main/{main.tf,variables.tf,outputs.tf}
-touch terraform/main/modules/{vpc,subnet,security_group,internet_gateway,route_table,nat_gateway,ec2}.tf
+aws configure
 ```
-
-### Criando a estrutura do OpenTofu
-
-Para criar a estrutura do OpenTofu, execute os comandos abaixo:
+#### Deploy com Terraform
 
 ```bash
-mkdir -p opentofu/{main,modules}
-touch opentofu/main/{main.tf,variables.tf,outputs.tf}
-touch opentofu/main/modules/{vpc,subnet,security_group,internet_gateway,route_table,nat_gateway,ec2}.tf
+git clone REPONAME
+cd REPONAME
+cd terraform/main
+terraform init
+terraform plan
+terraform apply
 ```
 
+#### Deploy com OpenTofu
+
+```bash
+git clone REPONAME
+cd REPONAME
+cd terraform/main
+tofu init
+tofu plan
+tofu apply
+```
+
+### Links úteis
+
+ - [Treinamento Descomplicando o Terraform - Intensivo 2024](https://www.linuxtips.io/treinamento-terraform-2024)
+ - [Terraform](https://www.terraform.io/)
+ - [OpenTofu](https://opentofu.org/)
