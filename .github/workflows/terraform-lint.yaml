@@ -29,4 +29,12 @@ jobs:
         curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
 
     - name: Terraform Lint
-      run: tflint --deep --config .tflint.hcl
+      run: tflint --init
+      run: tflint -f compact
+
+    - name: Terraform Format
+      run: terraform fmt -check=true -recursive
+
+    - name: Terraform Validate
+      run: terraform init
+      run: terraform validate
