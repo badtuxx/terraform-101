@@ -1,0 +1,47 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# Exclude CLI configuration files
+.terraformrc
+terraform.rc
+
+# Lock files created by Terraform providers
+*.lock.hcl
+
+# Override files (useful for local secrets or settings)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# .tfvars files (typically contain sensitive data)
+*.tfvars
+*.tfvars.json
+
+# Ignore tfplan files (output of 'terraform plan' command)
+*.tfplan
+
+# Ignore .DS_Store files (macOS metadata)
+.DS_Store
+
+# Ignore log files from executions
+*.log
+
+# Ignore backups created by editors (e.g., Emacs, Vim)
+*~
+
+# Ignore temporary files created by editors or IDEs
+*.swp
+*.swo
+.idea/
+*.vscode/
+
+# Ignore directories for Terraform provider plugins (default behavior for providers)
+.terraform.d/
