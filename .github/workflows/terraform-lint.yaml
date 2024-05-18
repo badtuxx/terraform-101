@@ -1,32 +1,36 @@
-name: Terraform Lint
-
+name: Lint
 on:
   push:
-    branches:
-      - main
-      - develop
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
-      - develop
 
 jobs:
-  terraform-lint:
-    name: Lint Terraform
+  tflint:
+    name: TFLint
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v4
+      name: Checkout source code
 
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
+    - uses: actions/cache@v4
+      name: Cache plugin dir
       with:
-        terraform_version: '1.0.0'
+        path: ~/.tflint.d/plugins
+        key: ${{ runner.os }}-tflint-${{ hashFiles('**/plugins.go') }}
+    - uses: terraform-linters/setup-tflint@v4
+      name: Setup TFLint
+      with:
+        tflint_version: v0.50.3
 
-    - name: Install TFLint
-      run: |
-        curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+    - name: Show version
+      run: tflint --version
 
-    - name: Terraform Lint
-      run: tflint --output-format=checkstyle | tee tflint.xml
+    - name: Init TFLint
+      run: tflint --init
+      env:
+        # https://github.com/terraform-linters/tflint/blob/master/docs/user-guide/plugins.md#avoiding-rate-limiting
+        GITHUB_TOKEN: ${{ github.token }}
+
+    - name: Run TFLint
+      run: tflint -f compact
