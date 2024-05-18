@@ -32,13 +32,11 @@ jobs:
       run: tflint --init
 
     - name: Executando
-      run: tflint -f compact
+      run: tflint -f compact --config terraform/.tflint.hcl terraform
 
     - name: Terraform Format
       run: terraform fmt -check=true -recursive
 
     - name: Terraform Validate
-      run: terraform init
+      run: cd terraform && terraform init && terraform validate
     
-    - name: Terraform Validate
-      run: terraform validate
