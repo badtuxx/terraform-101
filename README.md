@@ -13,7 +13,29 @@ A live foi realizada no dia 19/05/2024 com o Jeferson e o Gomex, ao vivo, mas vo
 - [AWS CLI - Configuração](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 - [AWS CLI - Configuração de credenciais](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 - [AWS CLI - Configuração de credenciais - Perfil](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+- [Localstack (Opcional)](https://docs.localstack.cloud/getting-started/installation/)
 
+### Usando com Localstack
+
+Copie os arquivos na pasta **localstack** para o diretório **.aws** dentro do diretório do usuário (/home/nome_usuario ou ~/).
+
+```bash
+mkdir ~/.aws && cp ./localstack/* ~/.aws/
+```
+
+> Nunca guarde os dados de acesso dentro do repositório, esta é a forma apenas para uso local.
+
+Inicie o localstack
+
+```bash
+localstack start
+```
+
+Inicie o repositório Terraform
+
+```bash
+terraform init
+```
 
 ### Comandos
 

@@ -21,3 +21,24 @@ variable "public_key" {
   type        = string
   default     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZ6"
 }
+
+variable "access_key" {
+  description = "AWS access key"
+  type = string
+}
+
+variable "secret_access" {
+  description = "AWS secret key"
+  type = string
+}
+
+variable "region" {
+  description = "AWS Region"
+  type = string
+}
+
+variable "endpoints_url" {
+  description = "URL for AWS endpoints"
+  type = string
+  default = "http://localhost:4566" # For Localstack
+}
