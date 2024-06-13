@@ -37,6 +37,22 @@ Inicie o repositório Terraform
 terraform init
 ```
 
+Aplique as configurações do Terraform
+
+```bash
+terraform apply -auto-approve
+```
+
+> Os dados do Localstack já foram incluídos no arquivo **localstack.auto.tfvars** e serão carregados automaticamente para preenchimento das variaveis.
+
+Teste o uso do AWS CLI para listar recursos do S3 usando o profile **localstack**
+
+```bash
+aws s3 ls --profile localstack
+```
+
+TODO: Teste mais recursos da AWS usando o Localstack
+
 ### Comandos
 
 #### Configuração AWS CLI
