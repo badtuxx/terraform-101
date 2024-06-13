@@ -13,7 +13,45 @@ A live foi realizada no dia 19/05/2024 com o Jeferson e o Gomex, ao vivo, mas vo
 - [AWS CLI - Configuração](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 - [AWS CLI - Configuração de credenciais](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 - [AWS CLI - Configuração de credenciais - Perfil](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+- [Localstack (Opcional)](https://docs.localstack.cloud/getting-started/installation/)
 
+### Usando com Localstack
+
+Copie os arquivos na pasta **localstack** para o diretório **.aws** dentro do diretório do usuário (/home/nome_usuario ou ~/).
+
+```bash
+mkdir ~/.aws && cp ./localstack/* ~/.aws/
+```
+
+> Nunca guarde os dados de acesso dentro do repositório, esta é a forma apenas para uso local.
+
+Inicie o localstack
+
+```bash
+localstack start
+```
+
+Inicie o repositório Terraform
+
+```bash
+terraform init
+```
+
+Aplique as configurações do Terraform
+
+```bash
+terraform apply -auto-approve
+```
+
+> Os dados do Localstack já foram incluídos no arquivo **localstack.auto.tfvars** e serão carregados automaticamente para preenchimento das variaveis.
+
+Teste o uso do AWS CLI para listar recursos do S3 usando o profile **localstack**
+
+```bash
+aws s3 ls --profile localstack
+```
+
+TODO: Teste mais recursos da AWS usando o Localstack
 
 ### Comandos
 
